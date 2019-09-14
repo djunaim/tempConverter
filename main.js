@@ -36,6 +36,7 @@ const clearClick = (e) => {
     const clearButtonID = e.target.id; 
     if (clearButtonID === 'clear') {
         temp.value = '';
+        printToDOM('output', temp.value);
     }
 }
 
