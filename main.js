@@ -32,6 +32,17 @@ const determineConverter = (e) => {
   } 
 }
 
+const enterFunction = (e) => { 
+    const key = e.keyCode; 
+    if (key === 13 && fRadioButton.checked === true) {
+        e.preventDefault();
+        toFahrenheit(temp.value);
+    } else if (key === 13 && cRadioButton.checked === true) {
+        e.preventDefault();
+        toCelsius(temp.value);
+    }
+}
+
 const clearClick = (e) => {
     const clearButtonID = e.target.id; 
     if (clearButtonID === 'clear') {
@@ -42,4 +53,5 @@ const clearClick = (e) => {
 
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+temp.addEventListener('keypress', enterFunction);
 clearButton.addEventListener('click', clearClick);
