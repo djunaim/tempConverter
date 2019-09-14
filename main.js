@@ -1,23 +1,20 @@
+const cRadioButton = document.getElementById('gridRadios1');
+const fRadioButton = document.getElementById('gridRadios2');
+const temp = document.getElementById('number');
+
 const printToDOM = (divID, textToPrint) => {
     document.getElementById(divID).innerHTML = textToPrint;
 }
 
-const cRadioButton = document.getElementById('gridRadios1').checked;
-const fRadioButton = document.getElementById('gridRadios2').checked;
-const temp = document.getElementById('number').value;
-
-const toCelsius =  () => {
-    if (cRadioButton === 'true') {
-        const newTemp = Math.floor(temp * 9 / 5 + 32);
-    }
+const toCelsius =  (temp) => {
+    const newTemp = Math.floor(temp * 9 / 5 + 32);
+    console.log(newTemp);
     printToDOM('output', newTemp);
 }
 
-const toFahrenheit =  () => {
-    if (fRadioButton === 'true') {
-        const newTempF = Math.floor((temp - 32) * 5 / 9);
-    }
-    printToDOM('output', newTempF);
+const toFahrenheit =  (temp) => {
+    const newTemp = Math.floor((temp - 32) * 5 / 9);
+    printToDOM('output', newTemp);
 }
 
 // Get a reference to the button element in the DOM
@@ -28,12 +25,13 @@ const button = document.getElementById("converter");
 const determineConverter = (e) => {
   console.log("event", e);
   const buttonID = e.target.id;
-  if (buttonID === 'convert'&& fRadioButton === 'true') {
-    toFahrenheit();
-  } else if (buttonID === 'convert' && cRadioButton === 'true') {
-      toCelsius();
-  }
+  if (buttonID === 'converter' && fRadioButton.checked === true) {
+    toFahrenheit(temp.value);
+  } else if (buttonID === 'converter' && cRadioButton.checked === true) {
+      console.log(buttonID);
+      toCelsius(temp.value);
+  } 
 }
 
 // Assign a function to be executed when the button is clicked
-document.getElementById('convert').addEventListener("click", determineConverter);
+button.addEventListener("click", determineConverter);
