@@ -24,7 +24,6 @@ const clearButton = document.getElementById('clear');
 // This function should determine which conversion should
 // happen based on which radio button is selected.
 const determineConverter = (e) => {
-  console.log("event", e);
   const buttonID = e.target.id;
   if (buttonID === 'converter' && fRadioButton.checked === true) {
     toFahrenheit(temp.value);
@@ -33,5 +32,13 @@ const determineConverter = (e) => {
   } 
 }
 
+const clearClick = (e) => {
+    const clearButtonID = e.target.id; 
+    if (clearButtonID === 'clear') {
+        temp.value = '';
+    }
+}
+
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+clearButton.addEventListener('click', clearClick);
