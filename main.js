@@ -7,13 +7,26 @@ const printToDOM = (divID, textToPrint) => {
 }
 
 const toCelsius =  (temp) => {
-    const newTemp = Math.floor(temp * 9 / 5 + 32);
-    console.log(newTemp);
+    const newTemp = Math.floor((temp - 32) * 5 / 9);
+    if (newTemp >= 32) {
+        document.getElementById('output').style.color = 'red';
+    } else if (newTemp <= 0 ) {
+        document.getElementById('output').style.color = 'blue';
+    } else if (newTemp > 0 && newTemp < 32) {
+        document.getElementById('output').style.color = 'green';
+    }
     printToDOM('output', newTemp);
 }
 
 const toFahrenheit =  (temp) => {
-    const newTemp = Math.floor((temp - 32) * 5 / 9);
+    const newTemp = Math.floor(temp * 9 / 5 + 32);
+    if (newTemp >= 90) {
+        document.getElementById('output').style.color = 'red';
+    } else if (newTemp <= 32 ) {
+        document.getElementById('output').style.color = 'blue';
+    } else if (newTemp > 32 && newTemp < 90) {
+        document.getElementById('output').style.color = 'green';
+    }
     printToDOM('output', newTemp);
 }
 
