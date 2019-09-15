@@ -15,7 +15,7 @@ const toCelsius =  (temp) => {
     } else if (newTemp > 0 && newTemp < 32) {
         document.getElementById('output').style.color = 'green';
     }
-    printToDOM('output', newTemp);
+    printToDOM('output', `<h3>${newTemp}</h3>`);
 }
 
 const toFahrenheit =  (temp) => {
@@ -27,7 +27,7 @@ const toFahrenheit =  (temp) => {
     } else if (newTemp > 32 && newTemp < 90) {
         document.getElementById('output').style.color = 'green';
     }
-    printToDOM('output', newTemp);
+    printToDOM('output', `<h3>${newTemp}</h3>`);
 }
 
 // Get a reference to the button element in the DOM
