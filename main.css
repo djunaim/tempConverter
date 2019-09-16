@@ -1,5 +1,9 @@
 body {
     background-color: azure;
     font-family: 'Chilanka', cursive;
+}
+
+body h1,
+#output {
     text-align: center;
 }
