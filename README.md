@@ -1,4 +1,4 @@
-# Temp Coverter
+# Temp Converter
 
 ## Description
 Use application to convert temperature to either celsius or fahrhenheit by pressing enter or clicking the convert button. Also, able to clear the page and text input when the clear button is clicked.
