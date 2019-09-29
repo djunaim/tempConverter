@@ -4,7 +4,11 @@
 Use application to convert temperature to either celsius or fahrhenheit by pressing enter or clicking the convert button. Also, able to clear the page and text input when the clear button is clicked.
 
 ## Screenshots
+![temp converter home page preview](https://raw.githubusercontent.com/djunaim/tempConverter/master/screenshots/image.PNG)
 
+![conversion in action](https://raw.githubusercontent.com/djunaim/tempConverter/master/screenshots/image2.PNG)
+
+![clearing form](https://raw.githubusercontent.com/djunaim/tempConverter/master/screenshots/image3.PNG)
 
 ## How to run
 * Clone down this project
